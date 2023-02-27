@@ -85,12 +85,14 @@ The environment consists of locations and doors, specifically:
 
 The skeleton of the environment has been created by __Luca Buoncomapgni__ [here](https://github.com/buoncubi/topological_map), which can be found in the _topological_map_ folder. 
 
+In gazebo, the world file was given by __Carmine Recchiuto__.
+
 The assignment implies several assumptions:
  * The location becomes urgent when the last timestamp of that location was more *urgencyThreshold* seconds ago 
 
 ## State Diagram
 The state machine is divided into two phases. 
-1. First phase represents the following behavior: The robot starts in the Location E and waits until it receives all the information about the map from _armor_py_api_
+1. First phase represents the following behavior: The robot starts in the separate location and does the inspection to detect all seven Aruco markers, then transfers the IDs of these markers through a topic to the state_machine script.
 2. Second phase represents the normal behavior described by the surveillance pollicy shown above
 
 The diagram of the states is shown below. Each of the phase is indicated in the figure. 
