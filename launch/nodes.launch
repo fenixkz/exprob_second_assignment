@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-	<node pkg="assignment2" type="aruco_detector" name="aruco_detector" output="screen"/>
-	<node pkg="assignment2" type="arm_control" name="arm_control"/>
-</launch>
