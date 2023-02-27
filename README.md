@@ -146,6 +146,8 @@ This is the main python module that creates the SMACH like State Machine and doe
 ## Component diagram
 ![comp_diag](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/comp_diag.jpg)
 
+## Sequence diagram
+![seq_diag](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/sequence.png)
 ## Video example
 You can watch a short video showing how the system works: https://clipchamp.com/watch/rUNZdoUDs2y
 ## Problems and further improvements
