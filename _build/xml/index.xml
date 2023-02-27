@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="class_aruco_detector" kind="class"><name>ArucoDetector</name>
+    <member refid="class_aruco_detector_1a6f1a173985290ca88a343cfb723c75c0" kind="variable"><name>nh_</name></member>
+    <member refid="class_aruco_detector_1aab80dace94b91352758b4d57fd8cb4a0" kind="variable"><name>detector_</name></member>
+    <member refid="class_aruco_detector_1ac6fdc6f3f862a324c46eeef3b89b64a4" kind="variable"><name>dictionary_</name></member>
+    <member refid="class_aruco_detector_1a18609787e697b9142efb427f3cdea1f0" kind="variable"><name>detectedMarkers</name></member>
+    <member refid="class_aruco_detector_1a5b91d3a20f133cca78300facb28158c2" kind="variable"><name>markerIDs</name></member>
+    <member refid="class_aruco_detector_1a40f0fe8a0da2db9cc0eb8351965c696f" kind="variable"><name>CamParam</name></member>
+    <member refid="class_aruco_detector_1a1109a12ece447eeb2555352b22a025a2" kind="variable"><name>done_pub</name></member>
+    <member refid="class_aruco_detector_1a7f4424d680940cd899ba754e28698a8d" kind="variable"><name>marker_cli_</name></member>
+    <member refid="class_aruco_detector_1aa7b3f7619cd0510399e8a302e43d4af1" kind="variable"><name>it_</name></member>
+    <member refid="class_aruco_detector_1a98a21bc2d5d7653373b00d18e939fbc8" kind="variable"><name>img_sub_</name></member>
+    <member refid="class_aruco_detector_1a75ecc1c5d26591a97a275f4405e21d8c" kind="variable"><name>room_client</name></member>
+    <member refid="class_aruco_detector_1a256906324252513a9754a23a3c68af56" kind="variable"><name>image_</name></member>
+    <member refid="class_aruco_detector_1a976344e67fd0745b3e8b8ba058ac3b21" kind="variable"><name>marker_pub</name></member>
+    <member refid="class_aruco_detector_1a7ca313b73d4ef6d209290f1629a437df" kind="function"><name>ArucoDetector</name></member>
+    <member refid="class_aruco_detector_1ad379822cd9e0412f7c8014a792fbafee" kind="function"><name>imageCallback</name></member>
+  </compound>
+  <compound refid="arm__control_8cpp" kind="file"><name>arm_control.cpp</name>
+    <member refid="arm__control_8cpp_1ab66086d63f3afabe77182af84d5efae8" kind="variable"><name>state_machine</name></member>
+    <member refid="arm__control_8cpp_1aa468680099a9995abda4db045d5a551d" kind="variable"><name>j_msg</name></member>
+    <member refid="arm__control_8cpp_1a81e95be5a283a32946d7b6c373cf9e11" kind="variable"><name>j1_pub</name></member>
+    <member refid="arm__control_8cpp_1a98180b0dffe87653496fefc0d84d4271" kind="variable"><name>j2_pub</name></member>
+    <member refid="arm__control_8cpp_1aaa682b9c0f2304b17e874d8298afce04" kind="variable"><name>j3_pub</name></member>
+    <member refid="arm__control_8cpp_1a1bdeaad86a1ceb5e72394235b05ba848" kind="variable"><name>j1_pos</name></member>
+    <member refid="arm__control_8cpp_1a87363915c1041ad17ae2595a62b771fb" kind="variable"><name>j2_pos</name></member>
+    <member refid="arm__control_8cpp_1a481c82a288c86c1db008b992fad3a2c1" kind="function"><name>js_cb</name></member>
+    <member refid="arm__control_8cpp_1a9d1fad4d4e68d9d0ee0abb499f89c175" kind="function"><name>done_cb</name></member>
+    <member refid="arm__control_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="aruco__detector_8cpp" kind="file"><name>aruco_detector.cpp</name>
+    <member refid="aruco__detector_8cpp_1a71361395d08fca19a21783e5a9aaba29" kind="define"><name>MARKER_SIZE</name></member>
+    <member refid="aruco__detector_8cpp_1a018dc459c9cc1f3a60e7c5dd46b45a87" kind="define"><name>MARKER_N</name></member>
+    <member refid="aruco__detector_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="marker__server_8cpp" kind="file"><name>marker_server.cpp</name>
+    <member refid="marker__server_8cpp_1acb386145eddd7e35588ea2b3a5ec6ca5" kind="function"><name>markerCallback</name></member>
+    <member refid="marker__server_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

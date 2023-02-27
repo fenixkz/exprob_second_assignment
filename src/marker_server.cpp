@@ -1,7 +1,24 @@
+/**
+ * @file marker_server.cpp
+ * @author Carmine Recchiuto 
+ * @brief Server node used to give the informations concering the environemnt
+ * @version 0.1
+ * @date 2023-02-09
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <ros/ros.h>
 #include <assignment2/RoomConnection.h>
 #include <assignment2/RoomInformation.h>
 
+/**
+ * @brief Function that is called every time a request is done by the client node using the '/room_info' message.
+ * 
+ * @param req contains the id of the room
+ * @param res contains the informations that will be given to the client node
+ * @return true  
+ */	
 bool markerCallback(assignment2::RoomInformation::Request &req, assignment2::RoomInformation::Response &res){
 	assignment2::RoomConnection conn;
 	switch (req.id){
@@ -90,8 +107,13 @@ bool markerCallback(assignment2::RoomInformation::Request &req, assignment2::Roo
 
 
 
-
-
+/**
+ * @brief Main function
+ * 
+ * @param argc 
+ * @param argv 
+ * @return 0
+ */
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "assignment2");

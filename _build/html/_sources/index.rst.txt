@@ -1,0 +1,56 @@
+.. EXPROB_Second_Assignment documentation master file, created by
+   sphinx-quickstart on Sun Feb 26 23:58:10 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to EXPROB Second Assignment's documentation!
+====================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+State Machine Module 
+=======================
+.. automodule:: scripts.state_machine
+   :members:
+
+
+Robot State Module
+=============================
+.. automodule:: scripts.robot_states
+   :members:
+  
+
+State Machine Helper Module 
+==============================
+.. automodule:: utils.assignment2.state_helper
+   :members:
+  
+
+Marker Server 
+================
+.. doxygenfile:: marker_server.cpp
+   :project: EXPROB_Second_Assignment
+  
+  
+Aruco Detector
+==================
+.. doxygenfile:: aruco_detector.cpp
+   :project: EXPROB_Second_Assignment
+  
+  
+Arm Control
+================
+.. doxygenfile:: arm_control.cpp
+   :project: EXPROB_Second_Assignment

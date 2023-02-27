@@ -33,6 +33,11 @@
   <arg unless="$(arg debug)" name="script_type" value="gzserver"/>
   <arg     if="$(arg debug)" name="script_type" value="debug"/>
 
+
+  <!-- robot model -->
+  <arg name="robot_model" default="$(find robot_description)/urdf/m2wr_arm.xacro" />
+  <param name="robot_description" 
+	 command="$(find xacro)/xacro --inorder $(arg robot_model)" />
   <!-- start gazebo server-->
   <group if="$(arg use_clock_frequency)">
     <param name="gazebo/pub_clock_frequency" value="$(arg pub_clock_frequency)" />
@@ -44,8 +49,26 @@
   <group if="$(arg gui)">
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
   </group>
+  
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model robot -param robot_description -x -6.0 -y 11.0 -z 0.05 -Y 3.14"/> 
 	
+	<param name="use_gui" value="True"/>
 	
-   <node name="marker_server" pkg="assignment2" type="marker_server" />
+	<rosparam file="$(find robot_description)/config/motors_config.yaml" command="load" ns="/robot"/>
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="--namespace=/robot
+		joint_state_controller
+		joint1_position_controller
+		joint2_position_controller
+		joint3_position_controller
+		joint4_position_controller"/>
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+		
+	</node>
+  	<include file="$(find assignment2)/launch/simulation_gmapping.launch"/>
+    	<include file="$(find assignment2)/launch/move_base.launch"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_description)/config/robot.rviz"/>
+   	<node name="marker_server" pkg="assignment2" type="marker_server" />
 
 </launch>

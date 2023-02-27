@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="class_aruco_detector" kind="class" language="C++" prot="public">
+    <compoundname>ArucoDetector</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_aruco_detector_1a6f1a173985290ca88a343cfb723c75c0" prot="private" static="no" mutable="no">
+        <type>ros::NodeHandle</type>
+        <definition>ros::NodeHandle ArucoDetector::nh_</definition>
+        <argsstring></argsstring>
+        <name>nh_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="44" column="21" bodyfile="src/aruco_detector.cpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1aab80dace94b91352758b4d57fd8cb4a0" prot="private" static="no" mutable="no">
+        <type>aruco::MarkerDetector</type>
+        <definition>aruco::MarkerDetector ArucoDetector::detector_</definition>
+        <argsstring></argsstring>
+        <name>detector_</name>
+        <briefdescription>
+<para>Aruco Marker Detector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="47" column="27" bodyfile="src/aruco_detector.cpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1ac6fdc6f3f862a324c46eeef3b89b64a4" prot="private" static="no" mutable="no">
+        <type>cv::Ptr&lt; cv::aruco::Dictionary &gt;</type>
+        <definition>cv::Ptr&lt;cv::aruco::Dictionary&gt; ArucoDetector::dictionary_</definition>
+        <argsstring></argsstring>
+        <name>dictionary_</name>
+        <briefdescription>
+<para>Dictionary of aruco pairs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="48" column="13" bodyfile="src/aruco_detector.cpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a18609787e697b9142efb427f3cdea1f0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; aruco::Marker &gt;</type>
+        <definition>std::vector&lt;aruco::Marker&gt; ArucoDetector::detectedMarkers</definition>
+        <argsstring></argsstring>
+        <name>detectedMarkers</name>
+        <briefdescription>
+<para>vector of detected Marker </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="49" column="17" bodyfile="src/aruco_detector.cpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a5b91d3a20f133cca78300facb28158c2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; ArucoDetector::markerIDs</definition>
+        <argsstring></argsstring>
+        <name>markerIDs</name>
+        <briefdescription>
+<para>vector of marker IDs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="50" column="17" bodyfile="src/aruco_detector.cpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a40f0fe8a0da2db9cc0eb8351965c696f" prot="private" static="no" mutable="no">
+        <type>aruco::CameraParameters</type>
+        <definition>aruco::CameraParameters ArucoDetector::CamParam</definition>
+        <argsstring></argsstring>
+        <name>CamParam</name>
+        <briefdescription>
+<para>Camera parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="51" column="29" bodyfile="src/aruco_detector.cpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a1109a12ece447eeb2555352b22a025a2" prot="private" static="no" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher ArucoDetector::done_pub</definition>
+        <argsstring></argsstring>
+        <name>done_pub</name>
+        <briefdescription>
+<para>ROS publisher to publish if the information gathering is done. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="52" column="20" bodyfile="src/aruco_detector.cpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a7f4424d680940cd899ba754e28698a8d" prot="private" static="no" mutable="no">
+        <type>ros::ServiceClient</type>
+        <definition>ros::ServiceClient ArucoDetector::marker_cli_</definition>
+        <argsstring></argsstring>
+        <name>marker_cli_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="54" column="24" bodyfile="src/aruco_detector.cpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1aa7b3f7619cd0510399e8a302e43d4af1" prot="private" static="no" mutable="no">
+        <type>image_transport::ImageTransport</type>
+        <definition>image_transport::ImageTransport ArucoDetector::it_</definition>
+        <argsstring></argsstring>
+        <name>it_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="55" column="37" bodyfile="src/aruco_detector.cpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a98a21bc2d5d7653373b00d18e939fbc8" prot="private" static="no" mutable="no">
+        <type>image_transport::Subscriber</type>
+        <definition>image_transport::Subscriber ArucoDetector::img_sub_</definition>
+        <argsstring></argsstring>
+        <name>img_sub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="56" column="33" bodyfile="src/aruco_detector.cpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a75ecc1c5d26591a97a275f4405e21d8c" prot="private" static="no" mutable="no">
+        <type>ros::ServiceClient</type>
+        <definition>ros::ServiceClient ArucoDetector::room_client</definition>
+        <argsstring></argsstring>
+        <name>room_client</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="57" column="24" bodyfile="src/aruco_detector.cpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a256906324252513a9754a23a3c68af56" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ArucoDetector::image_</definition>
+        <argsstring></argsstring>
+        <name>image_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="58" column="13" bodyfile="src/aruco_detector.cpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aruco_detector_1a976344e67fd0745b3e8b8ba058ac3b21" prot="private" static="no" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher ArucoDetector::marker_pub</definition>
+        <argsstring></argsstring>
+        <name>marker_pub</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="59" column="20" bodyfile="src/aruco_detector.cpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_aruco_detector_1a7ca313b73d4ef6d209290f1629a437df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArucoDetector::ArucoDetector</definition>
+        <argsstring>()</argsstring>
+        <name>ArucoDetector</name>
+        <briefdescription>
+<para>Constructor for <ref refid="class_aruco_detector" kindref="compound">ArucoDetector</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor sets up the ROS subscribers, publishers, and service clients, and initializes the marker detector. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="67" column="5" bodyfile="src/aruco_detector.cpp" bodystart="67" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aruco_detector_1ad379822cd9e0412f7c8014a792fbafee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArucoDetector::imageCallback</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;msg)</argsstring>
+        <name>imageCallback</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for image data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function processes the image data to detect markers, and stores the detected marker IDs in the markerIDs vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/aruco_detector.cpp" line="85" column="10" bodyfile="src/aruco_detector.cpp" bodystart="85" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class for detecting markers in images and publishing the results. This class is able to find Aruco markers around the robot, it subscribes to image and turn data, processes the data to detect markers, and publishes the results. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/aruco_detector.cpp" line="41" column="20" bodyfile="src/aruco_detector.cpp" bodystart="41" bodyend="147"/>
+    <listofallmembers>
+      <member refid="class_aruco_detector_1a7ca313b73d4ef6d209290f1629a437df" prot="public" virt="non-virtual"><scope>ArucoDetector</scope><name>ArucoDetector</name></member>
+      <member refid="class_aruco_detector_1a40f0fe8a0da2db9cc0eb8351965c696f" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>CamParam</name></member>
+      <member refid="class_aruco_detector_1a18609787e697b9142efb427f3cdea1f0" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>detectedMarkers</name></member>
+      <member refid="class_aruco_detector_1aab80dace94b91352758b4d57fd8cb4a0" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>detector_</name></member>
+      <member refid="class_aruco_detector_1ac6fdc6f3f862a324c46eeef3b89b64a4" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>dictionary_</name></member>
+      <member refid="class_aruco_detector_1a1109a12ece447eeb2555352b22a025a2" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>done_pub</name></member>
+      <member refid="class_aruco_detector_1a256906324252513a9754a23a3c68af56" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>image_</name></member>
+      <member refid="class_aruco_detector_1ad379822cd9e0412f7c8014a792fbafee" prot="public" virt="non-virtual"><scope>ArucoDetector</scope><name>imageCallback</name></member>
+      <member refid="class_aruco_detector_1a98a21bc2d5d7653373b00d18e939fbc8" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>img_sub_</name></member>
+      <member refid="class_aruco_detector_1aa7b3f7619cd0510399e8a302e43d4af1" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>it_</name></member>
+      <member refid="class_aruco_detector_1a7f4424d680940cd899ba754e28698a8d" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>marker_cli_</name></member>
+      <member refid="class_aruco_detector_1a976344e67fd0745b3e8b8ba058ac3b21" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>marker_pub</name></member>
+      <member refid="class_aruco_detector_1a5b91d3a20f133cca78300facb28158c2" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>markerIDs</name></member>
+      <member refid="class_aruco_detector_1a6f1a173985290ca88a343cfb723c75c0" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>nh_</name></member>
+      <member refid="class_aruco_detector_1a75ecc1c5d26591a97a275f4405e21d8c" prot="private" virt="non-virtual"><scope>ArucoDetector</scope><name>room_client</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
