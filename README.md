@@ -37,7 +37,7 @@ The machine has to have ROS Noetic with python > 3.0. Also, the following librar
  - [slam](https://github.com/CarmineD8/SLAM_packages)
  - [gmapping](https://github.com/CarmineD8/planning)
  - [openCV](https://github.com/opencv/opencv)
- - 
+ 
 ### Installation 
  - Clone the current repository to your ROS workspace and pre-install all the requirement libraries
  - Change directory to _scripts_ and run `chmod +x *.py` where * is the name of each python script
