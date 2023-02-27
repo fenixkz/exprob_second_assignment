@@ -90,7 +90,7 @@ The assignment implies several assumptions:
 
 ## State Diagram
 The state machine is divided into two phases. 
-1. First phase represents the following behavior: The robot starts in the separate location and does the inspection to detect all seven Aruco markers, then transfers the IDs of these markers through a topic to the state_machine script.
+1. First phase represents the following behavior: The robot starts in the separate location and does the inspection to detect all seven Aruco markers, then transfers the IDs of these markers through a topic to the state_machine script, which build the topological map of the environment using ARmor services.
 2. Second phase represents the normal behavior described by the surveillance pollicy shown above
 
 The diagram of the states is shown below. Each of the phase is indicated in the figure. 
