@@ -62,9 +62,6 @@ Two arguments are given to the launch file.
 ### Parameters
 In the `main.launch` file you can find the parameters used for the state machine implementation:
  - `test/random_sense/active` takes the argument `random` and decides whether the state machine is going to use random or manual sense
- - `test/random_plan_points` is a list of two integer numbers representing the amount of via points given by the **Planner** action server
- - `test/random_plan_time` is a list of two float numbers representing a delay to simulate computation of via points
- - `test/random_motion_time` is a list of two float numbers representing a delay to simulate the time spent moving the robot to that location
  - `state/initial_pose` is a list of two float numbers representing the initial position of the robot in the environment
  - `config/waiting_time` is a float number representing the waiting time of the robot in a location for surveillance purposes
  - `config/charge_time` is a float number representing the waiting time to simulate a process of recharging the battery of the robot
@@ -124,27 +121,23 @@ After that, it transits to **`GO_TO_CHARGING_LOCATION`** state, where the Contro
 Finally, **`RECHARGE`** state check if the battery got full. If the battery is full, then it transits to `BATTERY_FULL`, if not it transits to itself and does it until the battery gets full.
 
 ## Software architecture
-The _scripts/_ folder contains the information on each software component that was used to create this repository.  
-**Planner.py**, **robot_states.py** and **Controller.py** were given to us and more in-depth explanation of these software can be found [here](https://github.com/buoncubi/arch_skeleton). 
+The _scripts/_ and __src/__ folders contain the information on each software component that was used to create this repository.  
 
 A brief explanation:
 
-**Planner.py** simulates a process of finding the trajectory from the robot's position to the desired one. It computes an array of via points that are further needed for **Controller.py** script. It is publishes an Action Client ROS server `motion/planner`. The initial position for the trajectory is obtained via `state/get_pose` ROS service.
+**Aruco_detector.cpp** is a C++ code that uses openCV libraries to detect aruco markers in the image. 
 
-**Controller.py** simulates a process of moving the robot along a desired trajectory. And then using service `state/set_pose` sets a new posiiton for the robot.
+**Arm_control.cpp** is a C++ code that controls the movements of the arm of the robot to rotate the camera to capture all markers.
 
-**robot_state.py** is the robot itself. It publishes several ROS services that are needed for both **Planner** and **Controller**
- - `state/set_pose` to set a new pose to the robot, requries a message of type Point
- - `state/get_pose` to get a current pose of the robot, returnes a message of type Point
+**robot_state.py** is the robot itself. The only service that we need is:
  - `state/battery_low` to get a current state of the battery, returns a boolean
+ 
 ### State_helper
 **state_helper.py** implements helper classes to deal with `armor_py_api` and overall logic of the surveillance policy. It incorporates three classes: _ProtegeHelper()_, _ActionClientHelper()_, and _InterfaceHelper()_. The documentation provides the explanation of their logic. Briefly:
 
 **ProtegeHelper** has some methods to deal with queries and manipulations with the ontology, such as changing the 'isIn' property for the robot (to move the robot from one location to another)
 
-**ActionClientHelper** was given as an example to the similar problem. Implemented by the professor. It deals with actionlib to make it more convinient. 
-
-**InterfaceHelper** a helper class that loads all the necessarry parameters from ROS param server and gets the state of the battery from the corresponding service.
+**InterfaceHelper** a helper class that loads all the necessarry parameters from ROS param server and gets the state of the battery from the corresponding service. Also, uses move_base simple action client to send goals to move the robot.
 
 ### State_machine
 This is the main python module that creates the SMACH like State Machine and does the solution to the assignment. Again, please refer to the documentation for more detailed explanation.
