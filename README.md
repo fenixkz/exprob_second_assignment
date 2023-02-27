@@ -13,6 +13,12 @@ Documentation for the project can be found [here](https://fenixkz.github.io/expr
 ## Scenario
 The robot is used to inspect different locations in the indoor environment (figure below). The robot’s objective is to visit different locations and stay there for some time. Specific monitoring policies determine which locations should be visited by the robot.
 
+In particular, the robot will have to:
+- Be spawned in the initial position x = -6.0, y = 11.0
+- Build the "semantic" map of the environment by detecting, without moving the base of the robot, all seven markers that are present around it, by calling the provided service node. Try to "scan" the environment in a comprehensive way, possibly exploring different solutions related to the robot's model. 
+- Start the patrolling algorithm by relying on autonomous navigation strategies (mapping/planning) and on the information collected and stored in the ontology during the previous step.
+- When a room is reached, perform a complete scan of the room (by rotating the base or the camera).
+
 The surveillance pollicy is as folows:
  - When the robot's battery is not low, it should move to different locations and stay there for amount of time specified beforehand
  - The robot should stay mainly in the corridors
@@ -30,22 +36,25 @@ The machine has to have ROS Noetic with python > 3.0. Also, the following librar
  - [arch_skeleton](https://github.com/buoncubi/arch_skeleton)
  - [slam](https://github.com/CarmineD8/SLAM_packages)
  - [gmapping](https://github.com/CarmineD8/planning)
- 
+ - [openCV](https://github.com/opencv/opencv)
+ - 
 ### Installation 
- - Clone the current repository to your ROS workspace 
+ - Clone the current repository to your ROS workspace and pre-install all the requirement libraries
  - Change directory to _scripts_ and run `chmod +x *.py` where * is the name of each python script
  - Finally, build your workspace
 
 ### Launching
-Before launching the solution, please open the `exprob_second_assignment/launch/main.launch` file and change the path to the ontology file in `config/ontology_path` parameter.  
+Before launching the solution, please open the `exprob_second_assignment/launch/main.launch` file and change the path to the ontology file in `config/ontology_path` parameter. Also, please download this [repository](https://github.com/CarmineD8/aruco_ros/tree/main/aruco_ros) and copy the fodler __models__ to the ~/.gazebo folder.
+
 To launch the solution, please source your workspace and run the following command:  
 
-`roslaunch warden_robot main.launch random:=false view_smach_gui:=false`  
+`roslaunch assignment2 main.launch random:=false view_smach_gui:=false`  
 
 Two arguments are given to the launch file.  
 
 `random` refers to either random sense or manual sense of controlling the battery of the robot.  
 `view_smach_gui` arguments responsible for visualizing the state machine
+
 ### Parameters
 In the `main.launch` file you can find the parameters used for the state machine implementation:
  - `test/random_sense/active` takes the argument `random` and decides whether the state machine is going to use random or manual sense
@@ -60,6 +69,7 @@ In the `main.launch` file you can find the parameters used for the state machine
  - `config/ontology_name` is a string representing the name of the ontology
  - `config/ontology_path` is a string representing the absolute path to the ontology file
  - `test/random_sense/battery_time` is a list of two float numbers for choosing randomly the amount of time to wait to change the state of the battery. Only needed when the random sense is active. 
+ - 
 ## Environment
 The robot is simulated in the indoor environment which is shown in the figure below 
 ![env](https://github.com/fenixkz/warden_robot/blob/main/figures/exprorob.png)
