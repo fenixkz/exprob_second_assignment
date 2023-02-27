@@ -37,6 +37,7 @@ The machine has to have ROS Noetic with python > 3.0. Also, the following librar
  - [slam](https://github.com/CarmineD8/SLAM_packages)
  - [gmapping](https://github.com/CarmineD8/planning)
  - [openCV](https://github.com/opencv/opencv)
+ - [robot_description](https://github.com/fenixkz/exprob_robot_description)
  
 ### Installation 
  - Clone the current repository to your ROS workspace and pre-install all the requirement libraries
@@ -141,6 +142,9 @@ A brief explanation:
 
 ### State_machine
 This is the main python module that creates the SMACH like State Machine and does the solution to the assignment. Again, please refer to the documentation for more detailed explanation.
+
+## Component diagram
+![comp_diag](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/comp_diagram.jpg)
 
 ## Video example
 You can watch a short video showing how the system works: https://clipchamp.com/watch/rUNZdoUDs2y
