@@ -73,7 +73,7 @@ In the `main.launch` file you can find the parameters used for the state machine
  - 
 ## Environment
 The robot is simulated in the indoor environment which is shown in the figure below 
-![env](https://github.com/fenixkz/warden_robot/blob/main/figures/exprorob.png)
+![env](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/env.png)
 
 The environment consists of locations and doors, specifically:
  - A room is a location with one door
