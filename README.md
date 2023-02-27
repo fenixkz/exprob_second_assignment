@@ -123,7 +123,7 @@ After that, it transits to **`GO_TO_CHARGING_LOCATION`** state, where the Contro
 Finally, **`RECHARGE`** state check if the battery got full. If the battery is full, then it transits to `BATTERY_FULL`, if not it transits to itself and does it until the battery gets full.
 
 ## Software architecture
-The _scripts/_ and __src/__ folders contain the information on each software component that was used to create this repository.  
+The _scripts/_ and _src/_ folders contain the information on each software component that was used to create this repository.  
 
 A brief explanation:
 
