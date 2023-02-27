@@ -71,7 +71,7 @@ In the `main.launch` file you can find the parameters used for the state machine
  - `config/ontology_name` is a string representing the name of the ontology
  - `config/ontology_path` is a string representing the absolute path to the ontology file
  - `test/random_sense/battery_time` is a list of two float numbers for choosing randomly the amount of time to wait to change the state of the battery. Only needed when the random sense is active. 
- - 
+ 
 ## Environment
 The robot is simulated in the indoor environment which is shown in the figure below 
 ![env](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/env.png)
