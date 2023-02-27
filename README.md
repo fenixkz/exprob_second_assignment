@@ -144,7 +144,7 @@ A brief explanation:
 This is the main python module that creates the SMACH like State Machine and does the solution to the assignment. Again, please refer to the documentation for more detailed explanation.
 
 ## Component diagram
-![comp_diag](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/comp_diagram.jpg)
+![comp_diag](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/comp_diag.jpg)
 
 ## Video example
 You can watch a short video showing how the system works: https://clipchamp.com/watch/rUNZdoUDs2y
