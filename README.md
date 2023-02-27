@@ -6,7 +6,7 @@ Main: mazhitovayan@gmail.com
 ## Introduction
 This repository simulates the robot in a indoor environment for surveillance purposes. The main idea was to use [SMACH](http://wiki.ros.org/smach) library to create a State Machine that can simulate the needed behavior. Furthermore, the current repository uses [ARMOR](https://github.com/EmaroLab/armor) library and different scripts described in [arch_skeleton](https://github.com/buoncubi/arch_skeleton), it also creates an ontology and does some queries and manipulations to it, using [armor_py_api](https://github.com/EmaroLab/armor_py_api). The simulation is done in [Gazebo](https://gazebosim.org/) engine. 
 
-The repository was implemented in Ubuntu 20.04 with ROS Noeticc and Python 3.8.  
+The repository was implemented in Ubuntu 20.04 with ROS Noetic and Python 3.8.  
 ## Documentation
 Documentation for the project can be found [here](https://fenixkz.github.io/exprob_second_assignment/index.html)
 
@@ -46,7 +46,11 @@ The machine has to have ROS Noetic with python > 3.0. Also, the following librar
 ### Launching
 Before launching the solution, please open the `exprob_second_assignment/launch/main.launch` file and change the path to the ontology file in `config/ontology_path` parameter. Also, please download this [repository](https://github.com/CarmineD8/aruco_ros/tree/main/aruco_ros) and copy the fodler __models__ to the ~/.gazebo folder.
 
-To launch the solution, please source your workspace and run the following command:  
+To launch the solution, please source your workspace and run the following command in different terminals:  
+
+`roslaunch assignment2 assignment.launch` 
+
+The first one launches the gazebo simulation, and the second launches the main scripts.
 
 `roslaunch assignment2 main.launch random:=false view_smach_gui:=false`  
 
@@ -82,9 +86,6 @@ The environment consists of locations and doors, specifically:
 The skeleton of the environment has been created by __Luca Buoncomapgni__ [here](https://github.com/buoncubi/topological_map), which can be found in the _topological_map_ folder. 
 
 The assignment implies several assumptions:
- * Planner and controller routines are already implemented by the professor and can be found in the scripts folder
- * These are dummy implementation and more in depth description of these services can be found [here](https://github.com/buoncubi/arch_skeleton)
- * The planner requires **x** and **y** coordinates to compute the plan. Thus, I attached coordinates of the center of each location as shown in the environment figure
  * The location becomes urgent when the last timestamp of that location was more *urgencyThreshold* seconds ago 
 
 ## State Diagram
