@@ -150,7 +150,7 @@ This is the main python module that creates the SMACH like State Machine and doe
 ## Sequence diagram
 ![seq_diag](https://github.com/fenixkz/exprob_second_assignment/blob/main/figures/sequence.png)
 ## Video example
-You can watch a short video showing how the system works: https://clipchamp.com/watch/rUNZdoUDs2y
+You can watch a short video showing how the system works: https://www.youtube.com/watch?v=nIRYYDC_q20&ab_channel=AyanMazhitov
 ## Problems and further improvements
 The solution works very well for the provided as default parameters. However, some problems may occur when you change the location where the charging station is located. With this connection further improvements are:
  - Improve the `state_helper.ProtegeHelper.plan_to_recharge_station` method to work for other charging locations
